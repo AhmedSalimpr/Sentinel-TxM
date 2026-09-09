@@ -1,0 +1,85 @@
+{
+  "alert_id": "47d7921c-2e6f-43e0-b178-6617391119c3",
+  "nodes": [
+    {
+      "id": "b57c9db4-6ffa-41b1-85b2-cb8a42f63730",
+      "label": "hub",
+      "kyc": "pending",
+      "risk": 0.72
+    },
+    {
+      "id": "ae577d01-3204-40e8-94e7-1ab45de9bc76",
+      "label": "sink",
+      "kyc": "pending",
+      "risk": 0.855
+    },
+    {
+      "id": "736416b0-30b9-4640-a691-066bc98ba35b",
+      "label": "spoke",
+      "kyc": "pending",
+      "risk": 0.696
+    },
+    {
+      "id": "1a40603e-5504-45d7-a955-80376f80617f",
+      "label": "spoke",
+      "kyc": "pending",
+      "risk": 0.713
+    },
+    {
+      "id": "311ea625-c3c2-4c09-bbad-c68f4013ff5c",
+      "label": "spoke",
+      "kyc": "pending",
+      "risk": 0.732
+    },
+    {
+      "id": "47f87b9a-6b7b-46f5-8b6b-6b70d35808a1",
+      "label": "spoke",
+      "kyc": "pending",
+      "risk": 0.595
+    },
+    {
+      "id": "49a5ac78-283d-45c3-b2d7-2edb42d2c421",
+      "label": "spoke",
+      "kyc": "pending",
+      "risk": 0.79
+    }
+  ],
+  "edges": [
+    {
+      "source": "47f87b9a-6b7b-46f5-8b6b-6b70d35808a1",
+      "target": "b57c9db4-6ffa-41b1-85b2-cb8a42f63730",
+      "amount": 2661.76,
+      "tx_id": "fe166057-9962-4315-a37f-18ce89d0e558"
+    },
+    {
+      "source": "49a5ac78-283d-45c3-b2d7-2edb42d2c421",
+      "target": "b57c9db4-6ffa-41b1-85b2-cb8a42f63730",
+      "amount": 3794.86,
+      "tx_id": "af889b5b-7ee9-40bc-b338-534386abb863"
+    },
+    {
+      "source": "736416b0-30b9-4640-a691-066bc98ba35b",
+      "target": "b57c9db4-6ffa-41b1-85b2-cb8a42f63730",
+      "amount": 3897.24,
+      "tx_id": "2667216c-4aa7-4830-b47c-a200e7a67728"
+    },
+    {
+      "source": "311ea625-c3c2-4c09-bbad-c68f4013ff5c",
+      "target": "b57c9db4-6ffa-41b1-85b2-cb8a42f63730",
+      "amount": 2328.07,
+      "tx_id": "19e5cd19-e6e0-4258-8534-93e7571f1c68"
+    },
+    {
+      "source": "1a40603e-5504-45d7-a955-80376f80617f",
+      "target": "b57c9db4-6ffa-41b1-85b2-cb8a42f63730",
+      "amount": 3029.57,
+      "tx_id": "5ccf3db8-2b58-4770-8b02-628e7d68788b"
+    },
+    {
+      "source": "b57c9db4-6ffa-41b1-85b2-cb8a42f63730",
+      "target": "ae577d01-3204-40e8-94e7-1ab45de9bc76",
+      "amount": 14421.76,
+      "tx_id": "d2d7cd8c-def7-4c88-afd3-46c1db9da4e9"
+    }
+  ]
+}

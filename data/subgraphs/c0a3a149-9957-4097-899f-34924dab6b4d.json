@@ -1,0 +1,55 @@
+{
+  "alert_id": "c0a3a149-9957-4097-899f-34924dab6b4d",
+  "nodes": [
+    {
+      "id": "3d779744-696e-4246-b818-5f2ce3baa7d6",
+      "label": "hub",
+      "kyc": "verified",
+      "risk": 0.674
+    },
+    {
+      "id": "ae13d6f4-2bf2-4032-ac31-48b27b30c8a5",
+      "label": "cycle_node",
+      "kyc": "verified",
+      "risk": 0.709
+    },
+    {
+      "id": "53dbd3db-8a8f-4792-91e8-66219c727ee0",
+      "label": "cycle_node",
+      "kyc": "verified",
+      "risk": 0.595
+    },
+    {
+      "id": "6e1a3956-64aa-4205-a2d2-8ae7940baefb",
+      "label": "cycle_node",
+      "kyc": "verified",
+      "risk": 0.451
+    }
+  ],
+  "edges": [
+    {
+      "source": "3d779744-696e-4246-b818-5f2ce3baa7d6",
+      "target": "ae13d6f4-2bf2-4032-ac31-48b27b30c8a5",
+      "amount": 14165.55,
+      "tx_id": "b96d4cd3-e745-4d38-a3e1-858117dc1602"
+    },
+    {
+      "source": "ae13d6f4-2bf2-4032-ac31-48b27b30c8a5",
+      "target": "53dbd3db-8a8f-4792-91e8-66219c727ee0",
+      "amount": 14622.65,
+      "tx_id": "f62128ca-98e4-4fe9-a900-f15459897381"
+    },
+    {
+      "source": "53dbd3db-8a8f-4792-91e8-66219c727ee0",
+      "target": "6e1a3956-64aa-4205-a2d2-8ae7940baefb",
+      "amount": 14792.59,
+      "tx_id": "6017d8d4-e106-4d0a-9989-5e393b93f47c"
+    },
+    {
+      "source": "6e1a3956-64aa-4205-a2d2-8ae7940baefb",
+      "target": "3d779744-696e-4246-b818-5f2ce3baa7d6",
+      "amount": 14468.48,
+      "tx_id": "29457cb9-0805-49c6-b891-9f89eacc2d7a"
+    }
+  ]
+}

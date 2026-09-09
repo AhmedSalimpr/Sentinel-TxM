@@ -1,0 +1,7 @@
+pandas
+duckdb
+networkx
+fastapi
+uvicorn
+faker
+pytest

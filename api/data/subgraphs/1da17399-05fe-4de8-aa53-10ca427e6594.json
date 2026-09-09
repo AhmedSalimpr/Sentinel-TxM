@@ -1,0 +1,72 @@
+{
+  "alert_id": "1da17399-05fe-4de8-aa53-10ca427e6594",
+  "nodes": [
+    {
+      "id": "693b8140-e0ef-4f58-9426-cbd549bb1e22",
+      "label": "cycle_node_1",
+      "kyc": "pending",
+      "risk": 0.831
+    },
+    {
+      "id": "ce4648b8-fb90-414c-a0ca-406f4e76e3b5",
+      "label": "cycle_node_2",
+      "kyc": "verified",
+      "risk": 0.549
+    },
+    {
+      "id": "42b06958-2131-486b-8253-77cf07cd1ce5",
+      "label": "cycle_node_3",
+      "kyc": "verified",
+      "risk": 0.634
+    },
+    {
+      "id": "20e44041-71cb-4ce6-b30e-a360f107416a",
+      "label": "cycle_node_4",
+      "kyc": "pending",
+      "risk": 0.7
+    },
+    {
+      "id": "b3f9c597-324e-4118-b72c-06c6c4e36e76",
+      "label": "cycle_node_5",
+      "kyc": "verified",
+      "risk": 0.838
+    }
+  ],
+  "edges": [
+    {
+      "source": "693b8140-e0ef-4f58-9426-cbd549bb1e22",
+      "target": "ce4648b8-fb90-414c-a0ca-406f4e76e3b5",
+      "amount": 7311.38,
+      "timestamp": "2026-07-21 10:17:58",
+      "tx_id": "7b593e70-72d1-4e7d-b834-a3eb3dfe6f26"
+    },
+    {
+      "source": "ce4648b8-fb90-414c-a0ca-406f4e76e3b5",
+      "target": "42b06958-2131-486b-8253-77cf07cd1ce5",
+      "amount": 7043.05,
+      "timestamp": "2026-07-21 12:17:58",
+      "tx_id": "1bdac584-b5b8-4a89-b766-dd25ef02fea9"
+    },
+    {
+      "source": "42b06958-2131-486b-8253-77cf07cd1ce5",
+      "target": "20e44041-71cb-4ce6-b30e-a360f107416a",
+      "amount": 6810.92,
+      "timestamp": "2026-07-21 16:17:58",
+      "tx_id": "a3e0accf-d565-41c1-a95c-ace2ad6e5e7f"
+    },
+    {
+      "source": "20e44041-71cb-4ce6-b30e-a360f107416a",
+      "target": "b3f9c597-324e-4118-b72c-06c6c4e36e76",
+      "amount": 6708.65,
+      "timestamp": "2026-07-21 19:17:58",
+      "tx_id": "65690bd2-30aa-4eb7-abd0-42218776f92e"
+    },
+    {
+      "source": "b3f9c597-324e-4118-b72c-06c6c4e36e76",
+      "target": "693b8140-e0ef-4f58-9426-cbd549bb1e22",
+      "amount": 6490.24,
+      "timestamp": "2026-07-21 21:17:58",
+      "tx_id": "9f4e5d1c-6a75-4f8a-a66a-f93d0194c9e6"
+    }
+  ]
+}

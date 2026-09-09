@@ -1,0 +1,85 @@
+{
+  "alert_id": "3948ecfb-aa11-4668-947f-34284791f0ca",
+  "nodes": [
+    {
+      "id": "f6efc045-3b49-46e9-8625-a99cef479049",
+      "label": "hub",
+      "kyc": "pending",
+      "risk": 0.941
+    },
+    {
+      "id": "4d237c57-e924-4ac3-bc15-8833a64f0fa6",
+      "label": "sink",
+      "kyc": "pending",
+      "risk": 0.716
+    },
+    {
+      "id": "b21483ad-d790-4ba7-86ea-5d55ef7bcbf8",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.578
+    },
+    {
+      "id": "05f1a916-a383-4fbb-89ba-b2c5941bcb07",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.071
+    },
+    {
+      "id": "0b53f448-77c8-47f4-b93b-4ff8e60c7eb4",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.648
+    },
+    {
+      "id": "64c44142-1520-4bd1-b1dc-1689db91f26b",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.546
+    },
+    {
+      "id": "38a1309a-7967-40c1-a725-2155bb79a1c0",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.511
+    }
+  ],
+  "edges": [
+    {
+      "source": "38a1309a-7967-40c1-a725-2155bb79a1c0",
+      "target": "f6efc045-3b49-46e9-8625-a99cef479049",
+      "amount": 912.67,
+      "tx_id": "8ce0fefb-2b07-4cbc-b79a-caaa0da0e93d"
+    },
+    {
+      "source": "05f1a916-a383-4fbb-89ba-b2c5941bcb07",
+      "target": "f6efc045-3b49-46e9-8625-a99cef479049",
+      "amount": 2214.52,
+      "tx_id": "e11d5de0-b1ac-4bcf-9725-49ac5302ffed"
+    },
+    {
+      "source": "b21483ad-d790-4ba7-86ea-5d55ef7bcbf8",
+      "target": "f6efc045-3b49-46e9-8625-a99cef479049",
+      "amount": 4077.28,
+      "tx_id": "c3c44e01-b1a9-403b-949d-f53958d4c8cc"
+    },
+    {
+      "source": "64c44142-1520-4bd1-b1dc-1689db91f26b",
+      "target": "f6efc045-3b49-46e9-8625-a99cef479049",
+      "amount": 1387.76,
+      "tx_id": "fb031023-2f8f-4bec-982c-ffbe09b75112"
+    },
+    {
+      "source": "0b53f448-77c8-47f4-b93b-4ff8e60c7eb4",
+      "target": "f6efc045-3b49-46e9-8625-a99cef479049",
+      "amount": 2799.55,
+      "tx_id": "c20f77e2-fab7-4681-b5b2-20feebd5d188"
+    },
+    {
+      "source": "f6efc045-3b49-46e9-8625-a99cef479049",
+      "target": "4d237c57-e924-4ac3-bc15-8833a64f0fa6",
+      "amount": 34068.23,
+      "tx_id": "fb1c8c1c-bac3-45ad-a24b-b095ec88e38d"
+    }
+  ]
+}

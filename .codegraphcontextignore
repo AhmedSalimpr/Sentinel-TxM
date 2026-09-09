@@ -1,0 +1,30 @@
+# Build artifacts
+dist/**
+build/**
+.next/**
+
+# Dependencies
+node_modules/**
+.venv/**
+__pycache__/**
+
+# Generated files
+*.min.js
+*.generated.*
+
+# Test fixtures
+__fixtures__/**
+
+# Data files (large CSVs/JSONs)
+data/**/*.csv
+data/**/*.json
+
+# IDE/Editor
+.vscode/**
+.idea/**
+
+# Git
+.git/**
+
+# Pytest cache
+.pytest_cache/**

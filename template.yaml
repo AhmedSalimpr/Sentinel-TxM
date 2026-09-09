@@ -1,0 +1,159 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Sentinel-TxM Serverless Architecture with Kinesis, Lambda, and Neptune
+
+Globals:
+  Function:
+    Timeout: 60
+    Runtime: python3.12
+    Architectures:
+      - x86_64
+    MemorySize: 512
+    Environment:
+      Variables:
+        LOG_LEVEL: INFO
+
+Resources:
+  # ---------------------------------------------------------
+  # VPC Networking for Neptune
+  # ---------------------------------------------------------
+  SentinelVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: Sentinel-TxM-VPC
+
+  SubnetA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref SentinelVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs '']
+
+  SubnetB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref SentinelVPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: !Select [1, !GetAZs '']
+
+  NeptuneSubnetGroup:
+    Type: AWS::Neptune::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Subnets for Neptune Cluster
+      SubnetIds:
+        - !Ref SubnetA
+        - !Ref SubnetB
+
+  NeptuneSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow internal VPC access to Neptune
+      VpcId: !Ref SentinelVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 8182
+          ToPort: 8182
+          CidrIp: 10.0.0.0/16
+
+  LambdaSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for Detection Lambda
+      VpcId: !Ref SentinelVPC
+
+  # ---------------------------------------------------------
+  # Database (Amazon Neptune Serverless)
+  # ---------------------------------------------------------
+  NeptuneCluster:
+    Type: AWS::Neptune::DBCluster
+    Properties:
+      DBSubnetGroupName: !Ref NeptuneSubnetGroup
+      VpcSecurityGroupIds:
+        - !Ref NeptuneSecurityGroup
+      EngineVersion: "1.3.0.0"
+
+  NeptuneInstance:
+    Type: AWS::Neptune::DBInstance
+    Properties:
+      DBClusterIdentifier: !Ref NeptuneCluster
+      DBInstanceClass: db.t3.medium
+      
+  # ---------------------------------------------------------
+  # Data Streaming (Kinesis)
+  # ---------------------------------------------------------
+  TransactionsStream:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      ShardCount: 1
+
+  # ---------------------------------------------------------
+  # Compute (Lambda)
+  # ---------------------------------------------------------
+  TransactionProducerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: data_generator/
+      Handler: generate_data.lambda_handler
+      Policies:
+        - KinesisCrudPolicy:
+            StreamName: !Ref TransactionsStream
+      Environment:
+        Variables:
+          STREAM_NAME: !Ref TransactionsStream
+
+  DetectionEngineFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: detection/
+      Handler: handler.lambda_handler
+      Timeout: 120
+      MemorySize: 1024
+      VpcConfig:
+        SecurityGroupIds:
+          - !Ref LambdaSecurityGroup
+        SubnetIds:
+          - !Ref SubnetA
+          - !Ref SubnetB
+      Policies:
+        - AWSLambdaVPCAccessExecutionRole
+      Environment:
+        Variables:
+          NEPTUNE_ENDPOINT: !GetAtt NeptuneCluster.Endpoint
+          NEPTUNE_PORT: !GetAtt NeptuneCluster.Port
+      Events:
+        KinesisEvent:
+          Type: Kinesis
+          Properties:
+            Stream: !GetAtt TransactionsStream.Arn
+            StartingPosition: LATEST
+            BatchSize: 100
+
+  DashboardApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: api/
+      Handler: main.handler
+      Timeout: 30
+      MemorySize: 1024
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+
+Outputs:
+  NeptuneEndpoint:
+    Description: "Neptune Cluster Endpoint"
+    Value: !GetAtt NeptuneCluster.Endpoint
+  KinesisStreamArn:
+    Description: "Transactions Kinesis Stream ARN"
+    Value: !GetAtt TransactionsStream.Arn
+  DashboardApiUrl:
+    Description: "API Gateway endpoint URL for Dashboard"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"

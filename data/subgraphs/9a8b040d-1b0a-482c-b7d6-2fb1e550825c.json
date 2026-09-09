@@ -1,0 +1,46 @@
+{
+  "alert_id": "9a8b040d-1b0a-482c-b7d6-2fb1e550825c",
+  "nodes": [
+    {
+      "id": "eb45a03b-76b0-4ab4-bd8a-cb578b9b2c0a",
+      "label": "cycle_node_1",
+      "kyc": "pending",
+      "risk": 0.77
+    },
+    {
+      "id": "60d5c45f-5ec6-421a-9d98-b5d9a51fb5af",
+      "label": "cycle_node_2",
+      "kyc": "verified",
+      "risk": 0.775
+    },
+    {
+      "id": "b27f9b08-96fc-43a2-bfe2-fded3d36b9f5",
+      "label": "cycle_node_3",
+      "kyc": "verified",
+      "risk": 0.69
+    }
+  ],
+  "edges": [
+    {
+      "source": "eb45a03b-76b0-4ab4-bd8a-cb578b9b2c0a",
+      "target": "60d5c45f-5ec6-421a-9d98-b5d9a51fb5af",
+      "amount": 4784.4,
+      "timestamp": "2026-06-25 07:36:26",
+      "tx_id": "1defb646-a0a1-47d6-9e80-eb12b4df4c98"
+    },
+    {
+      "source": "60d5c45f-5ec6-421a-9d98-b5d9a51fb5af",
+      "target": "b27f9b08-96fc-43a2-bfe2-fded3d36b9f5",
+      "amount": 4710.98,
+      "timestamp": "2026-06-25 09:36:26",
+      "tx_id": "a1466cde-5f70-471a-bbb8-1d7f79fc2522"
+    },
+    {
+      "source": "b27f9b08-96fc-43a2-bfe2-fded3d36b9f5",
+      "target": "eb45a03b-76b0-4ab4-bd8a-cb578b9b2c0a",
+      "amount": 4657.57,
+      "timestamp": "2026-06-25 12:36:26",
+      "tx_id": "6d5736a2-2a19-4056-9a73-ad1a924591d9"
+    }
+  ]
+}

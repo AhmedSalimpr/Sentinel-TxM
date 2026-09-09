@@ -1,0 +1,145 @@
+{
+  "alert_id": "3722a097-c445-40b4-800e-f6f7a6704894",
+  "nodes": [
+    {
+      "id": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "label": "hub",
+      "kyc": "pending",
+      "risk": 0.77
+    },
+    {
+      "id": "780c0f01-3682-44da-9bf0-791b0a92ff28",
+      "label": "sink",
+      "kyc": "verified",
+      "risk": 0.221
+    },
+    {
+      "id": "4ab03e1d-7091-417f-8c5c-b473a8b0d79e",
+      "label": "spoke",
+      "kyc": "pending",
+      "risk": 0.571
+    },
+    {
+      "id": "4d280bac-5bbf-45d8-ac2e-51e525a279a3",
+      "label": "spoke",
+      "kyc": "pending",
+      "risk": 0.66
+    },
+    {
+      "id": "d2517bbb-acb5-4f27-be7e-44c029343d25",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.715
+    },
+    {
+      "id": "a0656a3a-605e-403a-9fc9-3894def5f60b",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.059
+    },
+    {
+      "id": "26886eca-c51c-436f-b63b-f84d58f2b05b",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.351
+    },
+    {
+      "id": "c32fdbeb-9648-4f2f-9f70-8742980e2123",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.372
+    },
+    {
+      "id": "0f5f9b32-0cc0-4033-a4c7-7726d007d4fb",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.563
+    },
+    {
+      "id": "5422797a-febf-45db-a0ec-9bd6ca84a0f9",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.727
+    },
+    {
+      "id": "e4478bec-9fb9-4d5a-bd71-f93eadc429e9",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.372
+    },
+    {
+      "id": "8b9b423b-c4b4-42bf-93e8-095d139ad343",
+      "label": "spoke",
+      "kyc": "verified",
+      "risk": 0.628
+    }
+  ],
+  "edges": [
+    {
+      "source": "5422797a-febf-45db-a0ec-9bd6ca84a0f9",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 2228.27,
+      "tx_id": "2358eba1-f047-419e-91be-b5a58e1e1c58"
+    },
+    {
+      "source": "26886eca-c51c-436f-b63b-f84d58f2b05b",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 3659.39,
+      "tx_id": "40c2b293-8fba-4efd-8abf-00c7be42fd66"
+    },
+    {
+      "source": "4d280bac-5bbf-45d8-ac2e-51e525a279a3",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 1200.64,
+      "tx_id": "2b6b84df-f66b-4b2e-a41b-8ab54d191372"
+    },
+    {
+      "source": "4ab03e1d-7091-417f-8c5c-b473a8b0d79e",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 3683.9,
+      "tx_id": "1d3a140a-1a46-45ae-bc63-515a49dc4935"
+    },
+    {
+      "source": "d2517bbb-acb5-4f27-be7e-44c029343d25",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 4352.19,
+      "tx_id": "7d158607-ad09-49bb-8c40-8180c79f759e"
+    },
+    {
+      "source": "e4478bec-9fb9-4d5a-bd71-f93eadc429e9",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 1051.91,
+      "tx_id": "49d91e9d-ba3a-40ea-8d9c-a09ed5fbc36e"
+    },
+    {
+      "source": "0f5f9b32-0cc0-4033-a4c7-7726d007d4fb",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 5381.95,
+      "tx_id": "e5202900-4204-4846-9a99-537716c8a840"
+    },
+    {
+      "source": "a0656a3a-605e-403a-9fc9-3894def5f60b",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 3723.97,
+      "tx_id": "b4360261-f335-43c4-9958-cbaa5aea514c"
+    },
+    {
+      "source": "c32fdbeb-9648-4f2f-9f70-8742980e2123",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 5227.53,
+      "tx_id": "e253a994-43df-4310-adad-c5c07044448a"
+    },
+    {
+      "source": "8b9b423b-c4b4-42bf-93e8-095d139ad343",
+      "target": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "amount": 1111.57,
+      "tx_id": "ee8b49c2-89d2-4629-b8e5-72fa30ab0e68"
+    },
+    {
+      "source": "6e508aa5-3657-4e73-b7ee-a10bab4ab796",
+      "target": "780c0f01-3682-44da-9bf0-791b0a92ff28",
+      "amount": 29160.22,
+      "tx_id": "f67c8af0-8d42-498c-b536-4cafe321998a"
+    }
+  ]
+}
